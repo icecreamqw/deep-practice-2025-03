@@ -1,0 +1,18 @@
+import numpy as np
+
+class Variable:
+    def __init__(self, data):
+        self.data = data
+
+class AddOne:
+    def __call__(self, input):
+        x = input.data
+        y = x + 1
+        return Variable(y)
+
+
+x = Variable(np.array(5))
+f = AddOne()
+y = f(x)
+
+print(y.data)  
